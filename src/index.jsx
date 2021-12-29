@@ -13,9 +13,11 @@ const WeatherRadar = forwardRef((props, ref) => {
   const [intervalAlaska, setIntervalAlaska] = useState(null);
   const currentOpacity = props.options.opacity ?? 0.9;
 
+
   useImperativeHandle(ref, () => ({
     trunOnRadar(isOn, map) {
       if (isOn) {
+        props.getLoader(true);
         const promiseArr = [];
         Object.keys(timeSlots[0]).map((key) => {
           promiseArr.push(getCapabilities(key, map));
@@ -27,6 +29,10 @@ const WeatherRadar = forwardRef((props, ref) => {
           newTemp["Alaska"] = results[1]["Alaska"];
           newSolts.push(newTemp);
           setTimeSlots(newSolts);
+          map.on('sourcedata', () => {
+            props.getLoader(false);
+            map.off('sourcedata', () => {});
+          });
         });
       } else {
         for (let i = 0; i < timeSlots[0]['USA'].length; i++) {
@@ -45,6 +51,7 @@ const WeatherRadar = forwardRef((props, ref) => {
             map.removeSource("weatherRadarAlaska" + timeSlots[0]['Alaska'][j]);
           }
         }
+        map.off('sourcedata', () => {});
       }
     },
     weatherAnimation(isPlay, map) {
@@ -176,6 +183,7 @@ WeatherRadar.propTypes = {
   options: PropTypes.array.isRequired,
   childern: PropTypes.any,
   getTime: PropTypes.func,
+  getLoader: PropTypes.func,
 };
 WeatherRadar.displayName = "WeatherRadar";
 export default WeatherRadar;

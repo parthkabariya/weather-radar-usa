@@ -1,0 +1,43 @@
+.map-container {
+  height: 100vh;
+}
+
+
+.sidebar, .control-bar {
+  background-color: rgba(35, 55, 75, 0.9);
+  color: #fff;
+  padding: 6px 12px;
+  bottom: 20px;
+  left: 0;
+  position: absolute;
+  margin: 12px;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.sidebar {
+  top: 0;
+  bottom:auto;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.loader {
+  background-color: rgba(35, 55, 75, 0.9);
+  color: #fff;
+  left: 0;
+  right:0;
+  top:0;
+  bottom:0;
+  align-items: center;
+  position: absolute;
+  border-radius: 4px;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  font-size: large;
+}

@@ -1,12 +1,9 @@
 {
   "name": "weather-radar-usa",
   "version": "1.0.0",
-  "description": "",
+  "description": "Weather Radar Layer for USA using Reactjs and Mapbox",
   "dependencies": {
-    "mapbox-gl": "^2.6.1",
-    "react": "^17.0.2",
-    "webpack": "^5.65.0",
-    "webpack-cli": "^4.9.1"
+    "react": "^17.0.2"
   },
   "main": "./build/index.js",
   "scripts": {
@@ -15,12 +12,34 @@
   "author": "Parth Kabariya",
   "license": "MIT",
   "devDependencies": {
+    "mapbox-gl": "^2.6.1",
     "@babel/core": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
     "babel-loader": "^8.2.3",
     "eslint": "^8.5.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-plugin-react": "^7.28.0"
-  }
+    "eslint-plugin-react": "^7.28.0",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "directories": {
+    "example": "example"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parthkabariya/weather-radar-usa.git"
+  },
+  "keywords": [
+    "weather-radar-usa",
+    "weather-radar",
+    "mapbox",
+    "reactjs",
+    "weather",
+    "radar"
+  ],
+  "bugs": {
+    "url": "https://github.com/parthkabariya/weather-radar-usa/issues"
+  },
+  "homepage": "https://github.com/parthkabariya/weather-radar-usa#readme"
 }

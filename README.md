@@ -57,3 +57,6 @@ options= {{
 }}
 ```
 
+#### Full example is provided into example directory
+![Example of Weather Radar](example/example.gif)
+

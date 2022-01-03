@@ -52,6 +52,7 @@ const WeatherRadar = forwardRef((props, ref) => {
           }
         }
         map.off('sourcedata', () => {});
+        props.getTime('');
       }
     },
     weatherAnimation(isPlay, map) {
@@ -142,7 +143,9 @@ const WeatherRadar = forwardRef((props, ref) => {
         previoustime = timeSlots[0][key][i - 1];
       }
       const currentTime = timeSlots[0][key][i];
-      props.getTime(timeSlots[0]["USA"][i]);
+      if (key == 'USA') {
+        props.getTime(timeSlots[0]["USA"][i]);
+      }
       // wait until the source is loaded
       if (
         map.getSource("weatherRadar" + key + currentTime) &&

@@ -1,6 +1,6 @@
 {
   "name": "weather-radar-usa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Weather Radar Layer for USA using Reactjs and Mapbox",
   "dependencies": {
     "react": "^17.0.2"

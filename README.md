@@ -20,6 +20,7 @@ const weatherRef = useRef(null);
         opacity: 0.8
     }}
     getTime={(time) => setDisplayTime(time)}
+    getLoader={(isLoader) => setLoader(isLoader)}
 />
 ```
 
@@ -46,6 +47,14 @@ weatherRef.current.weatherAnimation(false, map.current)
 Pass the getTime prop to the component.
 ```
 getTime={(time) => {
+    // Write your logic here.
+}}
+```
+
+#### Get the Loader while the first layer is still loading
+Pass the getLoader prop to the component.
+```
+getLoader={(isLoader) => {
     // Write your logic here.
 }}
 ```
